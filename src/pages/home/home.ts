@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the HomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { IonicPage, NavController, NavParams ,PopoverController  } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -15,7 +8,21 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+        public navCtrl: NavController,
+        public navParams: NavParams,
+        public popoverCtrl: PopoverController
+    )
+    {
+
+  }
+
+  presentPopover(myEvent) {
+    console.log(myEvent);
+    let popover = this.popoverCtrl.create('PopoverPage');
+    popover.present({
+      ev: myEvent
+    });
   }
 
   ionViewDidLoad() {

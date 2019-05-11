@@ -30,7 +30,7 @@ export class LoginPage {
   }
 
   chkLogin() {
-    
+    this.navCtrl.push('HomePage');
   }
 
   goToRegister(){
