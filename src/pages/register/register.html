@@ -58,11 +58,10 @@
           <div class="error-box"
             *ngIf="authForm.controls['chkUserPassword'].hasError('required') && authForm.controls['chkUserPassword'].touched">
             &nbsp;&nbsp;* Password is required!
-          </div>
-        
+          </div>        
           <button type="submit" ion-button full [disabled]="!authForm.valid">Register</button>
-          <button ion-button full clear padding-top (click)="goToLogin()" >Login</button>
         </form>
+        <button ion-button full clear padding-top (click)="goToLogin()" >Login</button>
       </ion-card>
     </div>
 </ion-content>
