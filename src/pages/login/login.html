@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary">
+  <ion-navbar color="primary" hideBackButton="true">
     <ion-title text-center>Login</ion-title>
   </ion-navbar>
 </ion-header>
@@ -16,18 +16,18 @@
     <form [formGroup]="authForm" (ngSubmit)="chkLogin()">
       <ion-item>
         <ion-label floating>Username</ion-label>
-        <ion-input type="text" [(ngModel)]="userName" value="" [formControl]="authForm.controls['userName']"
-          [ngClass]="{'error-border':!authForm.controls['userName'].valid}"></ion-input>
+        <ion-input type="text" [(ngModel)]="userName" value="" [formControl]="authForm.controls['chkUserName']"
+          [ngClass]="{'error-border':!authForm.controls['chkUserName'].valid}"></ion-input>
       </ion-item><br />
       <div class="error-box"
-        *ngIf="authForm.controls['userName'].hasError('required') && authForm.controls['userName'].touched">
+        *ngIf="authForm.controls['chkUserName'].hasError('required') && authForm.controls['chkUserName'].touched">
         &nbsp;&nbsp;* User Name is required!
       </div>
     
       <ion-item>
         <ion-label floating>Password</ion-label>
         <ion-input type="{{type}}" name="password" value="" [(ngModel)]="userPassword"
-          [formControl]="authForm.controls['userPassword']"></ion-input>
+          [formControl]="authForm.controls['chkUserPassword']"></ion-input>
         <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()">
           <ion-icon name="ios-eye-off-outline"></ion-icon>
         </button>
@@ -36,12 +36,12 @@
         </button>
       </ion-item><br />
       <div class="error-box"
-        *ngIf="authForm.controls['userPassword'].hasError('required') && authForm.controls['userPassword'].touched">
+        *ngIf="authForm.controls['chkUserPassword'].hasError('required') && authForm.controls['chkUserPassword'].touched">
         &nbsp;&nbsp;* Password is required!
       </div>
     
       <button type="submit" ion-button full [disabled]="!authForm.valid">Login</button>
-      <button ion-button full clear padding-top >Create New Account</button>
+      <button ion-button full clear padding-top (click)="goToRegister()" >Create New Account</button>
     </form>
   </ion-card>
 </div>

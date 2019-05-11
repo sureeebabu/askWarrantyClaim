@@ -20,8 +20,8 @@ export class LoginPage {
   ) {
 
     this.authForm = fb.group({
-      'userName': [null, Validators.compose([Validators.required])],
-      'userPassword': [null, Validators.compose([Validators.required])]
+      'chkUserName': [null, Validators.compose([Validators.required])],
+      'chkUserPassword': [null, Validators.compose([Validators.required])]
     })
   }
 
@@ -31,6 +31,10 @@ export class LoginPage {
 
   chkLogin() {
     
+  }
+
+  goToRegister(){
+    this.navCtrl.push('RegisterPage');
   }
 
   showPassword() {
