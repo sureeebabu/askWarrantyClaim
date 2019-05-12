@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="primary" hideBackButton="true">
+  <ion-navbar color="primary">
     <ion-title text-center>Register</ion-title>
   </ion-navbar>
 </ion-header>
@@ -61,7 +61,7 @@
           </div>        
           <button type="submit" ion-button full [disabled]="!authForm.valid">Register</button>
         </form>
-        <button ion-button full clear padding-top (click)="goToLogin()" >Login</button>
+        <!-- <button ion-button full clear padding-top (click)="goToLogin()" >Login</button> -->
       </ion-card>
     </div>
 </ion-content>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Storage } from '@ionic/storage';
 @IonicPage()
 @Component({
   selector: 'page-settings',
@@ -8,14 +8,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class SettingsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private storage: Storage
+  ) {
   }
 
   ionViewDidLoad() {
   }
 
-  goToChangePwd(){
+  goToChangePwd() {
     this.navCtrl.push('ChangepwdPage');
+  }
+
+  logOutFn() {
+    this.storage.clear().then(() => {
+      console.log('all keys are cleared');
+    });
+    this.navCtrl.setRoot("LoginPage");
   }
 
 }
