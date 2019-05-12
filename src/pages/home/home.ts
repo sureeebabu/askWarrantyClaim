@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,PopoverController  } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -11,22 +11,20 @@ export class HomePage {
   constructor(
         public navCtrl: NavController,
         public navParams: NavParams,
-        public popoverCtrl: PopoverController
     )
     {
-
+      // this.platform.registerBackButtonAction(() => {
+        
+      // });
   }
+ 
 
-  presentPopover(myEvent) {
-    console.log(myEvent);
-    let popover = this.popoverCtrl.create('PopoverPage');
-    popover.present({
-      ev: myEvent
-    });
+  settingFn() {
+    this.navCtrl.push('SettingsPage');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+    //this.viewCtrl.dismiss();
   }
 
 }
