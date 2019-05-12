@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { HttpClient } from '@angular/common/http';
 import { Storage } from '@ionic/storage';
 import { Observable } from 'rxjs/Observable';
+import { CommfuncProvider } from '../../providers/commfunc/commfunc';
 
 @IonicPage()
 @Component({
@@ -32,6 +33,7 @@ export class LoginPage {
     private storage:Storage,
     public loadingCtrl: LoadingController,
     public toast: ToastController,
+    public myFunc: CommfuncProvider
   ) {
 
     this.authForm = fb.group({
@@ -48,7 +50,7 @@ export class LoginPage {
     // console.log(this.userName);
     // console.log(this.userPassword);
     let data: Observable<any>;
-    let url = 'http://simpsonwms.arkaautomaations.com/WarrantyAppAPI/LoginApi.php?LGP=1';
+    let url = this.myFunc.domainURL +'WarrantyAppAPI/LoginApi.php?LGP=1';
     let queryParams = JSON.stringify({ Username: this.userName, Password: this.userPassword });
 
     let loader = this.loadingCtrl.create({
