@@ -18,6 +18,9 @@ export class HomePage {
       // });
   }
  
+  goToListInvoice(){
+    this.navCtrl.push('ListinvoicePage');
+  }
 
   settingFn() {
     this.navCtrl.push('SettingsPage');

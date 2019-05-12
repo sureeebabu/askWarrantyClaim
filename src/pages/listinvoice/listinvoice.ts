@@ -1,25 +1,31 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the ListinvoicePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-listinvoice',
   templateUrl: 'listinvoice.html',
 })
 export class ListinvoicePage {
-
+  //public search;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ListinvoicePage');
+    console.log('ListinvoicePage');
+  }
+
+  searchitem(searchbar) {
+    var q = searchbar.target.value;
+    if (q.trim() == '') {
+      return;
+    }
+    console.log(q);
+    // this.productsList = this.productsList.filter((v) => {
+    //   if (v.name.toLowerCase().indexOf(q.toLowerCase()) > -1) {
+    //     return true;
+    //   }
+    //   return false;
+    // })
   }
 
 }
