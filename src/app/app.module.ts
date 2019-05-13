@@ -7,9 +7,8 @@ import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { CommfuncProvider } from '../providers/commfunc/commfunc';
-import { QRScanner } from '@ionic-native/qr-scanner';
+import { Network } from '@ionic-native/network';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-
 
 @NgModule({
   declarations: [
@@ -28,7 +27,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   providers: [
     StatusBar,
     SplashScreen,
-    QRScanner,
+    Network,
     BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CommfuncProvider
