@@ -9,7 +9,14 @@ import { IonicStorageModule } from '@ionic/storage';
 import { CommfuncProvider } from '../providers/commfunc/commfunc';
 import { Network } from '@ionic-native/network';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-
+import { SQLite } from '@ionic-native/sqlite';
+import { Geolocation } from '@ionic-native/geolocation';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { Camera } from '@ionic-native/camera';
+import { MediaCapture } from '@ionic-native/media-capture';
+import { PhotoLibrary } from '@ionic-native/photo-library';
+import { Media } from '@ionic-native/media';
+import { File } from '@ionic-native/file';
 @NgModule({
   declarations: [
     MyApp,
@@ -29,6 +36,14 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SplashScreen,
     Network,
     BarcodeScanner,
+    SQLite,
+    Geolocation,
+    FileTransfer,
+    Camera,
+    MediaCapture,
+    PhotoLibrary,
+    Media,
+    File,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     CommfuncProvider
   ]
